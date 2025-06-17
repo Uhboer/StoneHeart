@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var speed = 400  
+var speed = 250  
 
 @onready var sprite = $sprite
 

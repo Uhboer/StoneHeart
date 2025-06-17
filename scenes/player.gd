@@ -2,6 +2,7 @@ extends CharacterBody2D
 var speed = 250  
 
 @onready var sprite = $sprite
+@onready var walkSound = $sounds/walk
 
 
 func _physics_process(delta):
@@ -12,3 +13,8 @@ func _physics_process(delta):
 	if direction.x > 0:
 		sprite.flip_h = false
 	move_and_slide()
+
+
+func _on_legs_body_entered(body):
+	if body.name == "tilemap":
+		walkSound.play()

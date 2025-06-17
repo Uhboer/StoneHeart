@@ -1,18 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://ly0084xc2rxk"]
+[gd_scene load_steps=10 format=3 uid="uid://ly0084xc2rxk"]
 
 [ext_resource type="Script" uid="uid://bk2fw5dngq14n" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://yccgqx5mcsov" path="res://spritos/humanall.png" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://dxen6wkhi126r" path="res://audio/grass1.ogg" id="3_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://t7hjnlh28hpa" path="res://audio/grass2.ogg" id="4_fjrip"]
+[ext_resource type="AudioStream" uid="uid://46snulwcl00t" path="res://audio/grass3.ogg" id="5_smehm"]
+[ext_resource type="AudioStream" uid="uid://ckfhql4mkvbyc" path="res://audio/grass4.ogg" id="6_ur7pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
 radius = 15.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
+size = Vector2(31, 32)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_y4r1p"]
+streams_count = 4
+stream_0/stream = ExtResource("3_tuyoq")
+stream_1/stream = ExtResource("4_fjrip")
+stream_2/stream = ExtResource("5_smehm")
+stream_3/stream = ExtResource("6_ur7pv")
+
 [node name="player" type="CharacterBody2D"]
-platform_floor_layers = 4294967041
+collision_mask = 4
 script = ExtResource("1_g2els")
 
-[node name="collider" type="CollisionShape2D" parent="."]
+[node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_u8vuu")
+
+[node name="legs" type="Area2D" parent="."]
+
+[node name="collider" type="CollisionShape2D" parent="legs"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_tuyoq")
 
 [node name="sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_g2els")
@@ -22,3 +42,10 @@ hframes = 2
 zoom = Vector2(3, 3)
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="sounds" type="Node2D" parent="."]
+
+[node name="walk" type="AudioStreamPlayer2D" parent="sounds"]
+stream = SubResource("AudioStreamRandomizer_y4r1p")
+
+[connection signal="body_entered" from="legs" to="." method="_on_legs_body_entered"]

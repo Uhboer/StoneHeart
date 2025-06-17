@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ly0084xc2rxk"]
+[gd_scene load_steps=4 format=3 uid="uid://ly0084xc2rxk"]
 
-[ext_resource type="Texture2D" uid="uid://bklgpr4cti0bw" path="res://spritos/human_weak.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bk2fw5dngq14n" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://yccgqx5mcsov" path="res://spritos/humanall.png" id="2_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
 [node name="collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_u8vuu")
 
 [node name="sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.6875, 0.6875)
-texture = ExtResource("1_3vyb7")
+texture = ExtResource("2_g2els")
+hframes = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.49, 3.49)
+limit_smoothed = true
+position_smoothing_enabled = true

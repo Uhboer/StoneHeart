@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ly0084xc2rxk"]
+
+[ext_resource type="Texture2D" uid="uid://bklgpr4cti0bw" path="res://spritos/human_weak.png" id="1_3vyb7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u8vuu")
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("1_3vyb7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.49, 3.49)

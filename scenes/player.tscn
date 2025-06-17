@@ -7,6 +7,7 @@
 radius = 15.0
 
 [node name="player" type="CharacterBody2D"]
+platform_floor_layers = 4294967041
 script = ExtResource("1_g2els")
 
 [node name="collider" type="CollisionShape2D" parent="."]

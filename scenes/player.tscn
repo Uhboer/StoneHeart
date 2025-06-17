@@ -47,5 +47,3 @@ position_smoothing_enabled = true
 
 [node name="walk" type="AudioStreamPlayer2D" parent="sounds"]
 stream = SubResource("AudioStreamRandomizer_y4r1p")
-
-[connection signal="body_entered" from="legs" to="." method="_on_legs_body_entered"]

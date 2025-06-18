@@ -4,6 +4,7 @@ var speed = 250
 @onready var sprite = $sprite
 @onready var walkSound = $sounds/walk
 @onready var weapons = $weapons
+@onready var arc = $arc
 
 
 func _physics_process(delta):
@@ -18,4 +19,15 @@ func _physics_process(delta):
 	if direction.x > 0:
 		sprite.flip_h = false
 		weapons.flip_h = false
+	
+	
+	attack()
 	move_and_slide()
+
+
+func attack():
+	if Input.is_action_just_pressed("LMC"):
+		arc.visible = true
+		await get_tree().create_timer(0.5).timeout
+		arc.visible = false
+		

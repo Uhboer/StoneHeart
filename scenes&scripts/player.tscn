@@ -71,3 +71,4 @@ animation = &"sword"
 autoplay = "sword"
 
 [node name="arc" parent="." instance=ExtResource("8_mj8n8")]
+visible = false

@@ -11,7 +11,7 @@
 radius = 15.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuyoq"]
-size = Vector2(31, 32)
+size = Vector2(32, 32)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_y4r1p"]
 streams_count = 4
@@ -31,7 +31,6 @@ shape = SubResource("CircleShape2D_u8vuu")
 [node name="legs" type="Area2D" parent="."]
 
 [node name="collider" type="CollisionShape2D" parent="legs"]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_tuyoq")
 
 [node name="sprite" type="Sprite2D" parent="."]
@@ -47,3 +46,4 @@ position_smoothing_enabled = true
 
 [node name="walk" type="AudioStreamPlayer2D" parent="sounds"]
 stream = SubResource("AudioStreamRandomizer_y4r1p")
+volume_db = -5.0

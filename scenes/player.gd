@@ -6,6 +6,7 @@ var speed = 250
 @onready var weapons = $weapons
 @onready var arc = $arc
 
+var canattack = true
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("A", "D", "W", "S")
@@ -26,10 +27,12 @@ func _physics_process(_delta):
 
 
 func attack():
-	if Input.is_action_just_pressed("LMC") && Global.attacking == false:
+	if Input.is_action_just_pressed("LMC") && Global.attacking == false && canattack:
 		arc.visible = true
+		canattack = false
 		Global.attacking == true
 		await get_tree().create_timer(0.5).timeout
 		arc.visible = false
 		Global.attacking == false
-		
+		await get_tree().create_timer(0.2).timeout
+		canattack = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo6wk5prq7mu5"]
 
 [ext_resource type="Texture2D" uid="uid://d257ro4y4c227" path="res://spritos/arc.png" id="1_37bqe"]
-[ext_resource type="Script" uid="uid://b4wkb6vtcxxqf" path="res://scenes&scripts/arc.gd" id="1_umteq"]
+[ext_resource type="Script" uid="uid://b4wkb6vtcxxqf" path="res://scenes/arc.gd" id="1_umteq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umteq"]
 size = Vector2(20, 14)

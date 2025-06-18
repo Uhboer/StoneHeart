@@ -26,8 +26,10 @@ func _physics_process(delta):
 
 
 func attack():
-	if Input.is_action_just_pressed("LMC"):
+	if Input.is_action_just_pressed("LMC") && Global.attacking == false:
 		arc.visible = true
+		Global.attacking == true
 		await get_tree().create_timer(0.5).timeout
 		arc.visible = false
+		Global.attacking == false
 		

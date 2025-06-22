@@ -18,3 +18,6 @@ texture = ExtResource("1_37bqe")
 [node name="collision" type="CollisionShape2D" parent="range"]
 position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_umteq")
+disabled = true
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]

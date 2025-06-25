@@ -1,26 +1,37 @@
-[gd_scene load_steps=6 format=4 uid="uid://cnay2v51vy16o"]
+[gd_scene load_steps=7 format=4 uid="uid://cnay2v51vy16o"]
 
 [ext_resource type="PackedScene" uid="uid://ly0084xc2rxk" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://iq8xna0oh7nc" path="res://spritos/tiles-Sheet.png" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://bw1aa1dbnc5na" path="res://scenes/basemob.tscn" id="3_4wyf3"]
+[ext_resource type="Script" uid="uid://dmdccjm5dck03" path="res://scripts/illuzorr/nigga_observer.gd" id="4_k0juu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
 texture = ExtResource("2_rwgxs")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
 8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
 
 [sub_resource type="TileSet" id="TileSet_k0juu"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 4
+physics_layer_0/collision_layer = 2
 sources/1 = SubResource("TileSetAtlasSource_rwgxs")
 
 [node name="world" type="Node2D"]
@@ -35,3 +46,9 @@ position = Vector2(16, 16)
 [node name="basemob" parent="." instance=ExtResource("3_4wyf3")]
 position = Vector2(-102, 15)
 scale = Vector2(0.576933, 0.577644)
+
+[node name="NiggaObserver" type="Node" parent="."]
+script = ExtResource("4_k0juu")
+
+[node name="ObserverCam" type="Camera2D" parent="NiggaObserver"]
+zoom = Vector2(3.1, 3.1)

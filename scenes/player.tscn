@@ -1,13 +1,19 @@
 [gd_scene load_steps=19 format=3 uid="uid://ly0084xc2rxk"]
 
+
+
 [ext_resource type="Script" uid="uid://bk2fw5dngq14n" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://yccgqx5mcsov" path="res://spritos/humanall.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bh7a4fytw0y7b" path="res://scripts/illuzorr/nigga.gd" id="2_ur7pv"]
 [ext_resource type="AudioStream" uid="uid://dxen6wkhi126r" path="res://audio/grass1.ogg" id="3_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://t7hjnlh28hpa" path="res://audio/grass2.ogg" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://46snulwcl00t" path="res://audio/grass3.ogg" id="5_smehm"]
 [ext_resource type="AudioStream" uid="uid://ckfhql4mkvbyc" path="res://audio/grass4.ogg" id="6_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://djl4l50r22w7a" path="res://spritos/inhands-Sheet.png" id="7_seiki"]
 [ext_resource type="PackedScene" uid="uid://bo6wk5prq7mu5" path="res://scenes/arc.tscn" id="8_mj8n8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
+size = Vector2(14, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
 radius = 15.0
@@ -110,6 +116,14 @@ animations = [{
 collision_mask = 4
 script = ExtResource("1_g2els")
 
+[node name="NiggaArea" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("2_ur7pv")
+
+[node name="NiggaShape" type="CollisionShape2D" parent="NiggaArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_smehm")
+
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_u8vuu")
@@ -136,3 +150,5 @@ autoplay = "stick"
 
 [node name="arc" parent="." instance=ExtResource("8_mj8n8")]
 visible = false
+
+[connection signal="body_exited" from="NiggaArea" to="NiggaArea" method="_on_body_exited"]

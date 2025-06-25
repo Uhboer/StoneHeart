@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwyttpvje6a7e"
+path="res://.godot/imported/Cultiste message 6.ogg-de1371180bbe67b73440f02062c5c7aa.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/Cultist massage/Cultiste message 6.ogg"
+dest_files=["res://.godot/imported/Cultiste message 6.ogg-de1371180bbe67b73440f02062c5c7aa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

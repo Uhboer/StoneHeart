@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlwm7cikcph56"
+path="res://.godot/imported/robe_scream_fear.ogg-0f4f300d6959f1a0d121526f0c0c06a7.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/Cultist massage/pain/robe_scream_fear.ogg"
+dest_files=["res://.godot/imported/robe_scream_fear.ogg-0f4f300d6959f1a0d121526f0c0c06a7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

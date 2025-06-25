@@ -131,7 +131,7 @@ volume_db = -5.0
 
 [node name="weapons" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_83f1l")
-animation = &"sword"
+animation = &"bat"
 autoplay = "stick"
 
 [node name="arc" parent="." instance=ExtResource("8_mj8n8")]

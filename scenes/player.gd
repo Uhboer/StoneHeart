@@ -25,6 +25,9 @@ func _physics_process(_delta):
 	attack()
 	move_and_slide()
 
+func weapons_md(name, damage, cd):
+	pass
+
 
 func attack():
 	if Input.is_action_just_pressed("LMC") && arc.attacking == false && canattack:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ly0084xc2rxk"]
+[gd_scene load_steps=19 format=3 uid="uid://ly0084xc2rxk"]
 
 [ext_resource type="Script" uid="uid://bk2fw5dngq14n" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://yccgqx5mcsov" path="res://spritos/humanall.png" id="2_g2els"]
@@ -19,18 +19,90 @@ stream_1/stream = ExtResource("4_fjrip")
 stream_2/stream = ExtResource("5_smehm")
 stream_3/stream = ExtResource("6_ur7pv")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("7_seiki")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("7_seiki")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("7_seiki")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("7_seiki")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("7_seiki")
+region = Rect2(64, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mj8n8"]
 atlas = ExtResource("7_seiki")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("7_seiki")
+region = Rect2(224, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_83f1l"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}],
+"loop": true,
+"name": &"bat",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}],
+"loop": true,
+"name": &"battleaxe",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}],
+"loop": true,
+"name": &"cutrlass",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": true,
+"name": &"saber",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": true,
+"name": &"stick",
+"speed": 1.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mj8n8")
 }],
 "loop": true,
 "name": &"sword",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}],
+"loop": true,
+"name": &"thandedsword",
 "speed": 1.0
 }]
 
@@ -59,8 +131,8 @@ volume_db = -5.0
 
 [node name="weapons" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_83f1l")
-animation = &"sword"
-autoplay = "sword"
+animation = &"stick"
+autoplay = "stick"
 
 [node name="arc" parent="." instance=ExtResource("8_mj8n8")]
 visible = false

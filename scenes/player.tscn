@@ -42,11 +42,11 @@ animations = [{
 collision_mask = 4
 script = ExtResource("1_g2els")
 
-[node name="NiggaKiller" type="Area2D" parent="."]
+[node name="NiggaArea" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("2_ur7pv")
 
-[node name="NiggaShape" type="CollisionShape2D" parent="NiggaKiller"]
+[node name="NiggaShape" type="CollisionShape2D" parent="NiggaArea"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_smehm")
 
@@ -77,4 +77,4 @@ autoplay = "sword"
 [node name="arc" parent="." instance=ExtResource("8_mj8n8")]
 visible = false
 
-[connection signal="body_exited" from="NiggaKiller" to="NiggaKiller" method="_on_body_exited"]
+[connection signal="body_exited" from="NiggaArea" to="NiggaArea" method="_on_body_exited"]

@@ -1,4 +1,4 @@
-extends Node
+extends State
 class_name MobIdle
 
 @export var mob: CharacterBody2D
@@ -20,6 +20,6 @@ func Update(delta: float):
 	else:
 		randomize_wander()
 		
-func Physics_Update():
+func Physics_Update(piska: float):
 	if mob:
 		mob.velocity = move_direction * move_speed

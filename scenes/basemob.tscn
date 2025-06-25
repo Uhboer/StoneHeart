@@ -38,8 +38,9 @@ sprite_frames = SubResource("SpriteFrames_ed41r")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="state machine" type="Node" parent="."]
+[node name="state machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_wx6nl")
+initial_state = NodePath("MobIdle")
 
 [node name="MobIdle" type="Node" parent="state machine" node_paths=PackedStringArray("mob")]
 script = ExtResource("3_wx6nl")

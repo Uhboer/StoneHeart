@@ -4,6 +4,8 @@ var speed = 200
 var hp = 100
 var isAlive = true
 
+enum states {idle, chase, attack}
+
 func _physics_process(_delta):
 	if !isAlive:
 		return
@@ -14,3 +16,5 @@ func _physics_process(_delta):
 		$AnimatedSprite2D.flip_h = true
 	else:
 		$AnimatedSprite2D.flip_h = false
+
+func death():

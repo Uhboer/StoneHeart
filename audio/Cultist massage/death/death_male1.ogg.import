@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvd0v8jyvc2bf"
+path="res://.godot/imported/death_male1.ogg-e04b961ef4ec5ef7888c9842486b94e9.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/Cultist massage/death/death_male1.ogg"
+dest_files=["res://.godot/imported/death_male1.ogg-e04b961ef4ec5ef7888c9842486b94e9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -30,10 +30,11 @@ func attack():
 	if Input.is_action_just_pressed("LMC") && arc.attacking == false && canattack:
 		arc.visible = true
 		canattack = false
-		arc.attacking == true
+		arc.attacking = true
 		await get_tree().create_timer(0.5).timeout
 		arc.visible = false
-		arc.attacking == false
+		arc.attacking = false
+		
 		#couldown
 		await get_tree().create_timer(0.2).timeout
 		canattack = true

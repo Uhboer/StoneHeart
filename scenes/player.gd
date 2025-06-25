@@ -27,12 +27,13 @@ func _physics_process(_delta):
 
 
 func attack():
-	if Input.is_action_just_pressed("LMC") && Global.attacking == false && canattack:
+	if Input.is_action_just_pressed("LMC") && arc.attacking == false && canattack:
 		arc.visible = true
 		canattack = false
-		Global.attacking == true
+		arc.attacking == true
 		await get_tree().create_timer(0.5).timeout
 		arc.visible = false
-		Global.attacking == false
+		arc.attacking == false
+		#couldown
 		await get_tree().create_timer(0.2).timeout
 		canattack = true

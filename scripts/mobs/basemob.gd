@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player: Node2D
+@onready var player = get_tree().get_first_node_in_group("player")
 @onready var navigation := $NavigationAgent2D as NavigationAgent2D
 
 var speed = 20
@@ -15,6 +15,7 @@ var current_state = States.IDLE
 
 func _ready() -> void:
 	if player:
+		print("Making path!")
 		makepath()
 
 func state_change(new_state: States) -> void:  # Указан конкретный тип

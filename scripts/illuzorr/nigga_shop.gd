@@ -94,3 +94,15 @@ func make_skills():
 
 func get_all_skills():
 	return _all_skills
+
+func pick_random_skills(count : int):
+	if _avaliable_for_purchase.size() == 0:
+		push_error("No skills to choose from!")
+		return
+	if _avaliable_for_purchase.size() < count:
+		push_error("Not enough skills to choose from!")
+		return
+	var skills = []
+	for i in count:
+		skills.append(_avaliable_for_purchase.pick_random())
+	return skills

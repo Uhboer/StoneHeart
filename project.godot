@@ -24,6 +24,10 @@ Global="*res://scenes/global.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[global_group]
+
+player=""
+
 [input]
 
 W={

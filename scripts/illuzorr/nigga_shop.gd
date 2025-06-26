@@ -1,5 +1,7 @@
 extends Node
 
+class_name NiggaShop
+
 var _balance = 0
 
 var _all_skills = []
@@ -7,7 +9,10 @@ var _avaliable_for_purchase = []
 var _purchased_skills = []
 
 func _ready() -> void:
-	# Test
+	# test()
+	pass
+
+func test():
 	add_balance(100)
 	
 	var first_skill = _avaliable_for_purchase.get(0)

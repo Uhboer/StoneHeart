@@ -1,5 +1,5 @@
 extends Node
-class_name Weapon
+class_name Weapon1
 
 var _damage
 var _sprite

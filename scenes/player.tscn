@@ -1,13 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://ly0084xc2rxk"]
+[gd_scene load_steps=19 format=3 uid="uid://ly0084xc2rxk"]
 
 [ext_resource type="Script" uid="uid://bk2fw5dngq14n" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://yccgqx5mcsov" path="res://spritos/humanall.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bh7a4fytw0y7b" path="res://scripts/illuzorr/nigga.gd" id="2_ur7pv"]
 [ext_resource type="AudioStream" uid="uid://dxen6wkhi126r" path="res://audio/grass1.ogg" id="3_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://t7hjnlh28hpa" path="res://audio/grass2.ogg" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://46snulwcl00t" path="res://audio/grass3.ogg" id="5_smehm"]
 [ext_resource type="AudioStream" uid="uid://ckfhql4mkvbyc" path="res://audio/grass4.ogg" id="6_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://djl4l50r22w7a" path="res://spritos/inhands-Sheet.png" id="7_seiki"]
 [ext_resource type="PackedScene" uid="uid://bo6wk5prq7mu5" path="res://scenes/arc.tscn" id="8_mj8n8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
+size = Vector2(14, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
 radius = 15.0
@@ -19,12 +23,76 @@ stream_1/stream = ExtResource("4_fjrip")
 stream_2/stream = ExtResource("5_smehm")
 stream_3/stream = ExtResource("6_ur7pv")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("7_seiki")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("7_seiki")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("7_seiki")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("7_seiki")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("7_seiki")
+region = Rect2(64, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mj8n8"]
 atlas = ExtResource("7_seiki")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("7_seiki")
+region = Rect2(224, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_83f1l"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}],
+"loop": true,
+"name": &"bat",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}],
+"loop": true,
+"name": &"battleaxe",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}],
+"loop": true,
+"name": &"cutrlass",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": true,
+"name": &"saber",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": true,
+"name": &"stick",
+"speed": 1.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mj8n8")
@@ -32,11 +100,27 @@ animations = [{
 "loop": true,
 "name": &"sword",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}],
+"loop": true,
+"name": &"thandedsword",
+"speed": 1.0
 }]
 
 [node name="player" type="CharacterBody2D"]
 collision_mask = 4
 script = ExtResource("1_g2els")
+
+[node name="NiggaArea" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("2_ur7pv")
+
+[node name="NiggaShape" type="CollisionShape2D" parent="NiggaArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_smehm")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -59,8 +143,10 @@ volume_db = -5.0
 
 [node name="weapons" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_83f1l")
-animation = &"sword"
-autoplay = "sword"
+animation = &"bat"
+autoplay = "stick"
 
 [node name="arc" parent="." instance=ExtResource("8_mj8n8")]
 visible = false
+
+[connection signal="body_exited" from="NiggaArea" to="NiggaArea" method="_on_body_exited"]

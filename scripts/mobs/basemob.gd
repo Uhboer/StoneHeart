@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player: Node2D
+@onready var player = get_tree().get_first_node_in_group("player")
 @onready var navigation := $NavigationAgent2D as NavigationAgent2D
 
 var speed = 20

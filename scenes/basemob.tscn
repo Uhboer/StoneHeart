@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bw1aa1dbnc5na"]
 
 [ext_resource type="Script" uid="uid://bv2acf7cojtvl" path="res://scripts/mobs/basemob.gd" id="1_4dtfd"]
-[ext_resource type="Texture2D" uid="uid://dy1mvl5wmhmk2" path="res://icon.svg" id="2_51rr5"]
+[ext_resource type="Texture2D" uid="uid://cdvda8o8bml0l" path="res://spritos/gf.png" id="2_4dtfd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51rr5"]
 radius = 70.0643
@@ -10,7 +10,7 @@ radius = 70.0643
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_51rr5")
+"texture": ExtResource("2_4dtfd")
 }],
 "loop": true,
 "name": &"idle",
@@ -18,7 +18,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_51rr5")
+"texture": ExtResource("2_4dtfd")
 }],
 "loop": true,
 "name": &"run",
@@ -28,14 +28,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2ers"]
 
 [node name="basemob" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_4dtfd")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_51rr5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.500001, -0.500003)
+scale = Vector2(0.271676, 0.319728)
 sprite_frames = SubResource("SpriteFrames_ed41r")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="AttackRange" type="Area2D" parent="."]
@@ -44,7 +47,6 @@ autoplay = "idle"
 shape = SubResource("CircleShape2D_p2ers")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

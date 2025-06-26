@@ -110,7 +110,7 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 4
 script = ExtResource("1_g2els")
 

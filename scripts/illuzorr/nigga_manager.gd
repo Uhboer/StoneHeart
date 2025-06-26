@@ -19,3 +19,5 @@ func test():
 	
 	# Logic with our weapon
 	weapon.get_texture()
+	if "implements" in weapon:
+		weapon.get_texture()

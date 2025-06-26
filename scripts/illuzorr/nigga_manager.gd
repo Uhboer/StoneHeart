@@ -4,7 +4,7 @@ var weapon
 
 
 func _ready() -> void:
-	test()
+	# test()
 	pass
 
 func test():

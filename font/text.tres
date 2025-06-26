@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cpijev5li14aq"]
+
+[ext_resource type="FontFile" uid="uid://c7cj7h2g5ixww" path="res://font/gothic.ttf" id="1_6simc"]
+
+[resource]
+Label/colors/font_color = Color(0.0970747, 8.88012e-06, 0.0991184, 1)
+Label/fonts/font = ExtResource("1_6simc")

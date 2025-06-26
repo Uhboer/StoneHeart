@@ -8,6 +8,8 @@ var speed = 250
 
 var canattack = true
 
+
+
 func _physics_process(_delta):
 	var direction = Input.get_vector("A", "D", "W", "S")
 	velocity = direction * speed
@@ -24,10 +26,6 @@ func _physics_process(_delta):
 	
 	attack()
 	move_and_slide()
-
-func weapons_md(name, damage, cd):
-	pass
-
 
 func attack():
 	if Input.is_action_just_pressed("LMC") && arc.attacking == false && canattack:

@@ -11,7 +11,7 @@ var timer : float
 var wander : Vector2
 
 enum States {IDLE, CHASE, DEATH, ATTACK}
-var current_state = States.CHASE
+var current_state = States.IDLE
 
 func _ready() -> void:
 	if player:

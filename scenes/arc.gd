@@ -18,3 +18,4 @@ func _process(delta):
 func _on_range_body_entered(body):
 	if body.name == "basemob":
 		print("collide")
+		body.hp -= Global.damage_weapon

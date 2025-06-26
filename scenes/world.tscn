@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://iq8xna0oh7nc" path="res://spritos/tiles-Sheet.png" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://bw1aa1dbnc5na" path="res://scenes/basemob.tscn" id="3_4wyf3"]
 [ext_resource type="Script" uid="uid://dmdccjm5dck03" path="res://scripts/illuzorr/nigga_observer.gd" id="4_k0juu"]
-[ext_resource type="Script" uid="uid://d2f4ejg77aoqf" path="res://scripts/illuzorr/nigga_shop.gd" id="5_71j4m"]
+[ext_resource type="Script" path="res://scripts/illuzorr/nigga_shop.gd" id="5_71j4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
 texture = ExtResource("2_rwgxs")

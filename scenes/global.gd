@@ -1,3 +1,4 @@
 extends Node
 
-var weapon = 1
+var weapon_index = 0
+var damage_weapon = 0

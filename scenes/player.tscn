@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ly0084xc2rxk"]
+[gd_scene load_steps=21 format=3 uid="uid://ly0084xc2rxk"]
 
 [ext_resource type="Script" uid="uid://bk2fw5dngq14n" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://yccgqx5mcsov" path="res://spritos/humanall.png" id="2_g2els"]

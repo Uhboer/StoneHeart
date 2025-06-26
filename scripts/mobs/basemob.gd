@@ -15,7 +15,6 @@ var current_state = States.IDLE
 
 func _ready() -> void:
 	if player:
-		print("Making path!")
 		makepath()
 
 func state_change(new_state: States) -> void:  # Указан конкретный тип

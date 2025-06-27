@@ -69,3 +69,5 @@ script = ExtResource("6_qfnet")
 [node name="NiggaWave" type="Node" parent="."]
 script = ExtResource("7_i7141")
 metadata/_custom_type_script = "uid://dus6ojecusy1e"
+
+[node name="NiggaTileMover" type="Node" parent="."]

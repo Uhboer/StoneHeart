@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://iq8xna0oh7nc" path="res://spritos/tiles-Sheet.png" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://bw1aa1dbnc5na" path="res://scenes/basemob.tscn" id="3_4wyf3"]
 [ext_resource type="Script" uid="uid://dmdccjm5dck03" path="res://scripts/illuzorr/nigga_observer.gd" id="4_k0juu"]
-
 [ext_resource type="Script" uid="uid://cu3vdrfudlemv" path="res://scripts/illuzorr/nigga_manager.gd" id="6_qfnet"]
 [ext_resource type="Script" uid="uid://dus6ojecusy1e" path="res://scripts/illuzorr/nigga_wave.gd" id="7_i7141"]
 

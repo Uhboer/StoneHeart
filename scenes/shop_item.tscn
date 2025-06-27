@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://biodlw5vvowlw"]
+
+[ext_resource type="Script" uid="uid://b7v4tpoe4oupn" path="res://scripts/illuzorr/nigga_shop_item.gd" id="1_btjjm"]
+[ext_resource type="Texture2D" uid="uid://chiowq7e1quxd" path="res://spritos/patrik_template.jpg" id="1_lrx6i"]
+
+[node name="ShopItem" type="Control"]
+custom_minimum_size = Vector2(163, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_right = -1779.0
+offset_bottom = -832.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_btjjm")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 159.0
+offset_bottom = 245.0
+
+[node name="Icon" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 30.0
+offset_right = 758.0
+offset_bottom = 750.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_lrx6i")
+
+[node name="Buy" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 208.0
+offset_right = 154.0
+offset_bottom = 239.0
+text = "Купить"
+
+[node name="Price" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 177.0
+offset_right = 154.0
+offset_bottom = 205.0
+text = "Стоимость: 10"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Name" type="RichTextLabel" parent="Panel"]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 155.0
+offset_bottom = 31.0
+text = "Какашка"
+scroll_active = false
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/Buy" to="." method="_on_buy_pressed"]

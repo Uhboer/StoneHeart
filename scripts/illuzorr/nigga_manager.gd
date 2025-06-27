@@ -2,11 +2,8 @@ extends Node
 
 var weapon
 
-var _shop : NiggaShop
-
 func _ready() -> void:
 	# test()
-	_shop = NiggaShop.new()
 	pass
 
 func test():

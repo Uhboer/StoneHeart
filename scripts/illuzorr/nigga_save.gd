@@ -1,16 +1,19 @@
 extends Node
 class_name NiggaSave
 
+static var save_path = "user://StoneHeart.gb" # PASHALKA.gb))
+
 func _init():
 	print("Hi!")
+	
+func _ready() -> void:
+	load_player_data()
 
 func load_player_data():
-	pass
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		Global.balance = file.get_var(Global.balance)
 
-func save_player_data():
-	pass
-
-#func _notification(what):
-	#if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		## get_tree().quit() # default behavior
-		#print("Huy tebe!")
+static func save_player_data():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(Global.balance)

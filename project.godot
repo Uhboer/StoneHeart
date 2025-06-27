@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://scenes/global.gd"
 Save="*res://scripts/illuzorr/nigga_save.gd"
 NiggaFun="*res://scripts/illuzorr/nigga_fun.gd"
+NiggaShop="*res://scripts/illuzorr/nigga_shop.gd"
 
 [debug]
 

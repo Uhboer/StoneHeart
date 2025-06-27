@@ -1,7 +1,7 @@
 extends Node
 
 var weapon_index = 0
-var damage_weapon = 0
+var damage_weapon = 100
 var weapon_cd = 1
 var weapon_range = 1
 

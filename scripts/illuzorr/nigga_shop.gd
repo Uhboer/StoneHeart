@@ -1,14 +1,15 @@
 extends Node
 
-class_name NiggaShop
-
-var _all_skills = []
-var _avaliable_for_purchase = []
-var _purchased_skills = []
+static var _all_skills = []
+static var _avaliable_for_purchase = []
+static var _purchased_skills = []
 
 func _ready() -> void:
 	# test()
 	pass
+
+static func get_avaliable_items():
+	return _avaliable_for_purchase.duplicate()
 
 func test():
 	add_balance(100)
@@ -54,14 +55,16 @@ func _init() -> void:
 	make_skills()
 	init_avaliable_for_purchase()
 
-func add_balance(money : int):
+static func add_balance(money : int):
 	Global.balance += money
+	NiggaSave.save_player_data() # wtf
 	
-func get_balance():
+static func get_balance():
 	return Global.balance
 	
-func remove_balance(money : int):
+static func remove_balance(money : int):
 	Global.balance = max(Global.balance - money, 0)
+	NiggaSave.save_player_data() # wtf
 
 func add_skill(new_skill : Skill):
 	if (_all_skills.has(new_skill)):
@@ -69,24 +72,26 @@ func add_skill(new_skill : Skill):
 		return
 	_all_skills.append(new_skill)
 	
-func purchase_skill(skill : Skill):
+static func purchase_skill(skill : Skill):
 	if (!_avaliable_for_purchase.has(skill)):
 		push_error("No skills to make purchase of " + skill.get_skill_name() + "!")
-		return
+		return false
 	if (Global.balance >= skill.get_cost()):
 		remove_balance(skill.get_cost())
 		if (!skill.is_repeatable()):
 			_avaliable_for_purchase.erase(skill)
 		print("You make a purchase of " + skill.get_skill_name() + " for " + str(skill.get_cost()) + "$!")
 		_purchased_skills.append(skill)
+		return true
 	else:
 		push_error("No money to make purchase of " + skill.get_skill_name() + "!")
-		return
+		return false
 	
 func init_avaliable_for_purchase():
 	_avaliable_for_purchase = _all_skills.duplicate()
 
 func make_skills():
+	add_skill(Skill.new("gg", 777, true, "res://icon.svg").add_modificator("health", 10, "add"))
 	add_skill(Skill.new("bonus10health", 12).add_modificator("health", 10, "add"))
 	add_skill(Skill.new("bonus24healthmultiplier", 25).add_modificator("health", 24, "multiply"))
 

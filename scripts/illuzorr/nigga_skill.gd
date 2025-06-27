@@ -1,15 +1,20 @@
-extends Node
 class_name Skill
 
-var _skill_name
-var _cost
-var _repeatable
+var _skill_name = "NONE"
+var _skill_icon = preload("res://spritos/patrik_template.jpg")
+var _cost = 0
+var _repeatable = true
 var _modificators = {"add": {}, "multiply": {}}
 
-func _init(skill_name : String, cost : int = 1, repeatable : bool = true) -> void:
+func _init(skill_name : String, cost : int = 1, repeatable : bool = true, skill_icon : String = "") -> void:
 	_skill_name = skill_name
 	_repeatable = repeatable
 	_cost = cost
+	if skill_icon != "":
+		_skill_icon = load(skill_icon)
+
+func get_skill_icon():
+	return _skill_icon
 
 func get_skill_name():
 	return _skill_name

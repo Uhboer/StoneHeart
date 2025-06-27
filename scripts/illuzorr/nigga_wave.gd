@@ -28,6 +28,7 @@ func start_new_wave() -> void:
 	wave_spawned_enemies.clear()
 	wave_is_active = true
 	wave_start_time = Time.get_unix_time_from_system()
+	NiggaShop.add_balance(1)
 	print("Wave ", current_wave, " started!")
 
 func spawn_enemy() -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://br8i3csh8mm53"]
+[gd_scene load_steps=5 format=3 uid="uid://br8i3csh8mm53"]
 
 [ext_resource type="Script" path="res://scenes/MenuMain.gd" id="1_aecnv"]
 [ext_resource type="Theme" uid="uid://cpijev5li14aq" path="res://font/text.tres" id="2_sow6e"]
+[ext_resource type="Script" uid="uid://c8qvhe1jchpyo" path="res://scripts/illuzorr/nigga_menu_shop.gd" id="3_r4m1v"]
 [ext_resource type="AudioStream" uid="uid://b1qaj6r126wpq" path="res://audio/Cultist massage/Cultiste message 2.ogg" id="3_sow6e"]
 
 [node name="Mind" type="CanvasLayer"]
@@ -69,13 +70,75 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_r4m1v")
 
 [node name="Exit_Shop" type="Button" parent="Shop"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -21.162
+anchor_top = 11.65
+anchor_right = -21.162
+anchor_bottom = 11.65
+offset_left = -61.52
+offset_top = -42.0
+offset_right = 61.48
+offset_bottom = 42.0
+grow_vertical = 0
 theme = ExtResource("2_sow6e")
 text = "Exit"
+
+[node name="Govno" type="RichTextLabel" parent="Shop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -10.425
+anchor_right = 1.0
+anchor_bottom = -10.425
+offset_left = -315.0
+offset_top = -92.0
+offset_right = -237.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+text = "Balance:"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Balance" type="RichTextLabel" parent="Shop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -7.188
+anchor_right = 1.0
+anchor_bottom = -7.188
+offset_left = -254.0
+offset_top = -57.48
+offset_right = -154.0
+offset_bottom = -34.48
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+text = "0"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Items" type="GridContainer" parent="Shop"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -476.0
+offset_top = -270.0
+offset_right = 505.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 10
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_sow6e")

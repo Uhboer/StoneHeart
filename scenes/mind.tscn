@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://br8i3csh8mm53"]
 
-[ext_resource type="Script" uid="uid://d2kax2t1jc4rv" path="res://scenes/MenuMain.gd" id="1_aecnv"]
+[ext_resource type="Script" path="res://scenes/MenuMain.gd" id="1_aecnv"]
 [ext_resource type="Theme" uid="uid://cpijev5li14aq" path="res://font/text.tres" id="2_sow6e"]
 [ext_resource type="AudioStream" uid="uid://b1qaj6r126wpq" path="res://audio/Cultist massage/Cultiste message 2.ogg" id="3_sow6e"]
 
@@ -50,6 +50,7 @@ theme = ExtResource("2_sow6e")
 text = "Shop"
 
 [node name="Exit" type="Button" parent="Menu/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_sow6e")
 text = "Die"

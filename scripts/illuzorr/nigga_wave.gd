@@ -1,5 +1,4 @@
 extends Node
-class_name NiggaWave
 
 @onready var enemy_scene = preload("res://scenes/basemob.tscn")
 @onready var player = $"../player"
@@ -7,9 +6,9 @@ class_name NiggaWave
 
 var current_wave: int = 0
 var wave_is_active: bool = false
-var wave_duration: float = 3.0
-var wave_cooldown: float = 3.0
-var enemies_per_wave: int = 1
+@export var wave_duration: float = 3.0
+@export var wave_cooldown: float = 3.0
+@export var enemies_per_wave: int = 1
 var wave_spawned_enemies: Array[Node] = []
 @export var max_distance_x: float = 200.0
 @export var min_distance_x: float = -200.0
@@ -17,6 +16,9 @@ var wave_spawned_enemies: Array[Node] = []
 @export var min_distance_y: float = -200.0
 @export var min_distance_from_player: float = 150.0 # Минимальное расстояние от игрока
 @export var max_distance_from_player: float = 400.0 # Максимальное расстояние от игрока
+
+@export var max_enemy_distance: float = 1000.0 # Максимальное расстояние, после которого враг удаляется
+@export var max_enemies: int = 50 # Максимальное количество врагов на сцене
 
 var wave_start_time: float = 0.0
 
@@ -29,12 +31,17 @@ func start_new_wave() -> void:
 	print("Wave ", current_wave, " started!")
 
 func spawn_enemy() -> void:
+	if get_tree().get_nodes_in_group("enemy").size() >= max_enemies:
+		return
+		
 	if enemy_scene == null:
 		printerr("Error: Enemy scene is not assigned!")
 		return
 
 	var new_enemy = enemy_scene.instantiate()
 	world.add_child(new_enemy)
+	
+	new_enemy.add_to_group("enemy")
 	
 	# new_enemy.scale = Vector2(0.5, 0.5)
 
@@ -65,6 +72,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var current_time = Time.get_unix_time_from_system()
 
+	cleanup_distant_enemies()
+
 	if !wave_is_active:
 		if current_time > wave_start_time + wave_cooldown:
 			if player != null:
@@ -76,3 +85,14 @@ func _process(delta: float) -> void:
 		if current_time > wave_start_time + wave_duration:
 			wave_is_active = false
 			print("Wave ", current_wave, " ended! Cooldown starting.")
+
+func cleanup_distant_enemies() -> void:
+	if player == null:
+		return
+	
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for enemy in enemies:
+		if enemy.position.distance_to(player.position) > max_enemy_distance:
+			if enemy in wave_spawned_enemies:
+				wave_spawned_enemies.erase(enemy)
+			enemy.queue_free()

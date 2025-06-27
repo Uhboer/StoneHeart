@@ -3,5 +3,8 @@
 [ext_resource type="FontFile" uid="uid://c7cj7h2g5ixww" path="res://font/gothic.ttf" id="1_6simc"]
 
 [resource]
-Label/colors/font_color = Color(0.0970747, 8.88012e-06, 0.0991184, 1)
+default_font = ExtResource("1_6simc")
+default_font_size = 50
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/constants/shadow_offset_y = 1
 Label/fonts/font = ExtResource("1_6simc")

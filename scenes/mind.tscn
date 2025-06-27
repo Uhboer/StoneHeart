@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://br8i3csh8mm53"]
+
+[ext_resource type="Script" uid="uid://d2kax2t1jc4rv" path="res://scenes/MenuMain.gd" id="1_aecnv"]
+[ext_resource type="Theme" uid="uid://cpijev5li14aq" path="res://font/text.tres" id="2_sow6e"]
+[ext_resource type="AudioStream" uid="uid://b1qaj6r126wpq" path="res://audio/Cultist massage/Cultiste message 2.ogg" id="3_sow6e"]
+
+[node name="Mind" type="CanvasLayer"]
+script = ExtResource("1_aecnv")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1697.0
+offset_top = 950.0
+offset_right = 1893.0
+offset_bottom = 1026.0
+theme = ExtResource("2_sow6e")
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 107.0
+offset_top = 116.0
+offset_right = 147.0
+offset_bottom = 156.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 0
+offset_top = -205.0
+offset_right = 377.0
+offset_bottom = 66.0
+theme_override_constants/separation = 30
+
+[node name="Start" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sow6e")
+text = "Ouroboros"
+
+[node name="Button" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sow6e")
+text = "Option"
+
+[node name="Shop" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sow6e")
+text = "Shop"
+
+[node name="Exit" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sow6e")
+text = "Die"
+
+[node name="Shop" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit_Shop" type="Button" parent="Shop"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("2_sow6e")
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sow6e")
+autoplay = true
+
+[connection signal="pressed" from="Menu/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Shop" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Shop/Exit_Shop" to="." method="_on_exit_shop_pressed"]

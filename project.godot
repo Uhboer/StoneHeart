@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*res://scenes/global.gd"
 
+[debug]
+
+gdscript/warnings/deprecated_keyword=0
+
 [display]
 
 window/size/viewport_width=1920

@@ -29,6 +29,8 @@ animations = [{
 
 [node name="basemob" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)
+collision_layer = 0
+collision_mask = 5
 script = ExtResource("1_4dtfd")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]

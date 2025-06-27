@@ -4,12 +4,17 @@ extends Node
 @onready var tile_map = $"../TileMapLayer"
 @onready var observer_cam : Camera2D = $ObserverCam
 
+@export var enabled = false
+
 var last_player_position
 var in_smoothing = false
 var zooming_speed = 1.001
 var min_zoom : Vector2 = Vector2(2, 2)
 
 func _process(delta: float) -> void:
+	if !enabled:
+		return
+		
 	var player_is_alive = false
 	
 	for child in world.get_children():

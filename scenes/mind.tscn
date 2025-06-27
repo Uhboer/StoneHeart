@@ -7,6 +7,15 @@
 [node name="Mind" type="CanvasLayer"]
 script = ExtResource("1_aecnv")
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 1697.0
+offset_top = 950.0
+offset_right = 1893.0
+offset_bottom = 1026.0
+theme = ExtResource("2_sow6e")
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ly0084xc2rxk"]
+[gd_scene load_steps=22 format=3 uid="uid://ly0084xc2rxk"]
 
 [ext_resource type="Script" uid="uid://bk2fw5dngq14n" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://yccgqx5mcsov" path="res://spritos/humanall.png" id="2_g2els"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://ckfhql4mkvbyc" path="res://audio/grass4.ogg" id="6_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://djl4l50r22w7a" path="res://spritos/inhands-Sheet.png" id="7_seiki"]
 [ext_resource type="PackedScene" uid="uid://bo6wk5prq7mu5" path="res://scenes/arc.tscn" id="8_mj8n8"]
+[ext_resource type="Script" uid="uid://6uguw2k4cwe7" path="res://scripts/weapons/weapon_system.gd" id="10_y4r1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smehm"]
 size = Vector2(14, 30)
@@ -141,12 +142,15 @@ position_smoothing_enabled = true
 stream = SubResource("AudioStreamRandomizer_y4r1p")
 volume_db = -5.0
 
-[node name="weapons" type="AnimatedSprite2D" parent="."]
+[node name="weaponsanim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_83f1l")
 animation = &"bat"
 autoplay = "stick"
 
 [node name="arc" parent="." instance=ExtResource("8_mj8n8")]
 visible = false
+
+[node name="weapon_system" type="Node" parent="."]
+script = ExtResource("10_y4r1p")
 
 [connection signal="body_exited" from="NiggaArea" to="NiggaArea" method="_on_body_exited"]

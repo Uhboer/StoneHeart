@@ -3,11 +3,10 @@ var speed = 250
 
 @onready var sprite = $sprite
 @onready var walkSound = $sounds/walk
-@onready var weapons = $weapons
+@onready var weaponsAnim = $weaponsanim
 @onready var arc = $arc
 
-var canattack = true
-
+@onready var weapon_system = $weapon_system
 
 
 func _physics_process(_delta):
@@ -18,24 +17,15 @@ func _physics_process(_delta):
 	
 	if direction.x < 0:
 		sprite.flip_h = true
-		weapons.flip_h = true
+		weaponsAnim.flip_h = true
 	if direction.x > 0:
 		sprite.flip_h = false
-		weapons.flip_h = false
+		weaponsAnim.flip_h = false
 	
 	
-	attack()
+	input()
 	move_and_slide()
 
-func attack():
-	if Input.is_action_just_pressed("LMC") && arc.attacking == false && canattack:
-		arc.visible = true
-		canattack = false
-		arc.attacking = true
-		await get_tree().create_timer(0.5).timeout
-		arc.visible = false
-		arc.attacking = false
-		
-		#couldown
-		await get_tree().create_timer(0.2).timeout
-		canattack = true
+func input():
+	if Input.is_action_pressed("LMC"):
+		weapon_system.attack()

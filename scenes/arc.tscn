@@ -19,4 +19,6 @@ texture = ExtResource("1_37bqe")
 position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_umteq")
 
+[node name="Node" type="Node" parent="."]
+
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]

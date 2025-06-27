@@ -1,9 +1,11 @@
 extends Node2D
 
+class_name Arc
+
 @onready var attack = $attack
 @onready var collision = $range/collision
 
-var attacking = false
+var attacking = Global.attacking
 
 func _process(delta):
 	if attacking == false:
@@ -16,6 +18,6 @@ func _process(delta):
 
 
 func _on_range_body_entered(body):
-	if body.name == "basemob":
+	if body.name == "basemob" && attacking:
 		print("collide")
 		body.hp -= Global.damage_weapon
